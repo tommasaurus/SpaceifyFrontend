@@ -127,12 +127,12 @@ const ClientLogin = () => {
           </button>
         </form>
 
-        <div className="links">
+        {/* <div className="links">
           <span>
             Don't have an account? <Link to="/signup">Sign up</Link>
           </span>
           <Link to="/forgot-password">Forgot your password?</Link>
-        </div>
+        </div> */}
 
         <div className="footer">
           <p>
