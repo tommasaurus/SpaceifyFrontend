@@ -39,9 +39,9 @@ const ClientLogin = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    loginWithGoogle();
-  };
+  // const handleGoogleLogin = () => {
+  //   loginWithGoogle();
+  // };
 
   const handleLogoClick = () => {
     navigate("/");
@@ -62,7 +62,7 @@ const ClientLogin = () => {
         </button>
         <p className="subtitle">Sign into your account</p>
 
-        <button onClick={handleGoogleLogin} className="google-button">
+        {/* <button onClick={handleGoogleLogin} className="google-button">
           <svg
             className="google-icon"
             width="18"
@@ -87,7 +87,7 @@ const ClientLogin = () => {
             />
           </svg>
           Continue with Google
-        </button>
+        </button> */}
 
         <div className="divider">
           <span>or</span>
