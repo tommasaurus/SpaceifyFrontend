@@ -89,16 +89,16 @@ const ClientLogin = () => {
           Continue with Google
         </button> */}
 
-        <div className="divider">
+        {/* <div className="divider">
           <span>or</span>
-        </div>
+        </div> */}
 
         <form onSubmit={handleLogin} className="form-login">
           <div className="input-group">
-            <label className="label">Email</label>
+            <label className="label">Username</label>
             <input
               type="text"
-              placeholder="Enter your email"
+              placeholder="Enter your username"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
