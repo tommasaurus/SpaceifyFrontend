@@ -1,4 +1,5 @@
 import React from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -33,28 +34,29 @@ function LayoutWithNavbarFooter({ children }) {
 function App() {
   return (
     <Router>
-      <div className='App'>
+      <div className="App">
         <LayoutWithNavbarFooter>
           <Routes>
-            <Route path='/' element={<Frontpage />} />
-            <Route path='/login' element={<ClientLogin />} />
-            <Route path='/signup' element={<ClientSignup />} />
+            <Route path="/" element={<Frontpage />} />
+            <Route path="/login" element={<ClientLogin />} />
+            <Route path="/signup" element={<ClientSignup />} />
             <Route
-              path='/dashboard/*'
+              path="/dashboard/*"
               element={
                 <RequireAuth>
                   <Routes>
-                    <Route path='' element={<Dashboard />} />
-                    <Route path='properties' element={<Properties />} />
-                    <Route path='messages' element={<Messages />} />
-                    <Route path='calendar' element={<Calendar />} />
-                    <Route path='tenants' element={<TenantPage />} />
+                    <Route path="" element={<Dashboard />} />
+                    <Route path="properties" element={<Properties />} />
+                    <Route path="messages" element={<Messages />} />
+                    <Route path="calendar" element={<Calendar />} />
+                    <Route path="tenants" element={<TenantPage />} />
                   </Routes>
                 </RequireAuth>
               }
             />
           </Routes>
         </LayoutWithNavbarFooter>
+        <SpeedInsights />
       </div>
     </Router>
   );
