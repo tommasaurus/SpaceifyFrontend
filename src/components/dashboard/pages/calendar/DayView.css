@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap");
+
+.dateview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  height: calc(100vh - 200px);
+  background: transparent;
+  border-radius: 20px;
+  font-family: "Outfit", sans-serif;
+}
+
+.dateview-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.dateview-nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #e17b50;
+  transition: all 0.3s ease;
+}
+
+.dateview-nav-button:hover {
+  background-color: rgba(225, 123, 80, 0.1);
+}
+
+.dateview-selector {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  flex: 1;
+}
+
+.dateview-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid #e4e4e4; /* Lightened border color */
+  background: rgb(249, 248, 248);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 90px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05); /* Added subtle shadow */
+}
+
+.dateview-event-time {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 0.25rem;
+}
+
+.dateview-item:hover {
+  border-color: #e17b50;
+  background-color: #ffede6;
+  box-shadow: 0 4px 12px rgba(225, 123, 80, 0.5); /* Enhanced shadow on hover with brand color */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.dateview-item.dateview-today {
+  background-color: #f9d6c5;
+  border: 2px solid #e17b50;
+}
+
+.dateview-item.dateview-selected {
+  background-color: #e17b50;
+  color: white;
+  border-color: #e17b50;
+}
+
+.dateview-item.dateview-selected .dateview-dayname {
+  font-size: 1.3rem;
+}
+
+.dateview-item.dateview-selected .dateview-daynumber {
+  font-size: 2rem;
+}
+
+.dateview-dayname {
+  font-size: 1rem;
+  font-weight: 600;
+  color: inherit;
+}
+
+.dateview-daynumber {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: inherit;
+}
+
+.dateview-body {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+  background: transparent;
+  border-radius: 12px;
+  /* border: 2px solid #00000035; */
+}
+
+.dateview-timeline {
+  width: 70px;
+  flex-shrink: 0;
+  padding: 1rem 0 1rem 0;
+}
+
+.dateview-timeslot {
+  height: 100px;
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+  position: relative;
+  top: -61px;
+}
+
+.dateview-grid {
+  flex: 1;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.dateview-hourline {
+  height: 100px;
+  border-top: 1px dashed #00000077;
+  margin: 0;
+}
+
+.dateview-currenttime {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.dateview-currenttime-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #e17b50;
+  border-radius: 50%;
+  margin-left: -6px;
+}
+
+.dateview-currenttime-line {
+  flex: 1;
+  height: 2px;
+  background-color: #e17b50;
+}
+
+.dateview-event {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  padding: 0.75rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dateview-event:hover {
+  transform: translateX(2px);
+}
+
+.dateview-event.type-primary {
+  background-color: #ece4de;
+  border-left: 3px solid rgba(225, 123, 80, 0.9);
+}
+
+.dateview-event.type-dark {
+  background-color: #ece4de;
+  border-left: 3px solid rgba(0, 0, 0, 0.9);
+}
+
+.dateview-event.type-success {
+  background-color: #ece4de;
+  border-left: 3px solid rgba(16, 185, 129, 0.9);
+}
+
+.dateview-event.type-warning {
+  background-color: #fec2c0;
+  border-left: 3px solid rgba(245, 158, 11, 0.9);
+}
+
+.dateview-event-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.25rem;
+}
+
+.dateview-event-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.dateview-event-attendees {
+  display: flex;
+  margin-top: 0.75rem;
+  gap: -0.5rem;
+}
+
+.dateview-attendee {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e17b50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 2px solid white;
+  margin-left: -8px;
+}
+
+.dateview-attendee:first-child {
+  margin-left: 0;
+}
+
+.dateview-body::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dateview-body::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 6px;
+}
+
+.dateview-body::-webkit-scrollbar-thumb {
+  background: #feb99e;
+  border-radius: 6px;
+}
+
+.dateview-body::-webkit-scrollbar-thumb:hover {
+  background: #f9a17b;
+}
+
+@media (max-width: 768px) {
+  .dateview-content {
+    padding: 0.5rem;
+  }
+
+  .dateview-selector {
+    gap: 0.5rem;
+  }
+
+  .dateview-item {
+    min-height: 70px;
+    padding: 0.75rem;
+  }
+
+  .dateview-dayname {
+    font-size: 0.875rem;
+  }
+
+  .dateview-daynumber {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dateview-timeline {
+    width: 60px;
+  }
+
+  .dateview-event {
+    padding: 0.5rem;
+  }
+
+  .dateview-event-title {
+    font-size: 0.75rem;
+  }
+}

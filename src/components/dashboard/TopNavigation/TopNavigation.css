@@ -1,0 +1,228 @@
+.top-navigation {
+  position: fixed;
+  top: 0;
+  left: 73px;
+  right: 0;
+  height: 70px;
+  background: rgb(245, 237, 230);
+  border-bottom: 1px solid rgba(175, 27, 27, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.104);
+  z-index: 40;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dashboard-sidebar-expanded .top-navigation {
+  left: 230px;
+}
+
+.top-navigation .nav-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 24px;
+}
+
+.top-navigation .search-container {
+  flex: 1;
+  max-width: 800px;
+}
+
+.top-navigation .search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.top-navigation .search-input {
+  width: 50%;
+  margin-left: 1.5rem;
+  height: 40px;
+  padding: 8px 40px 8px 38px; /* Changed left padding from 16px to 40px */
+  border: 1px solid #744b3e;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #fcfeff;
+  transition: all 0.2s ease;
+}
+
+.top-navigation .search-input:focus {
+  outline: none;
+  background-color: white;
+  border-color: #e17b50;
+  box-shadow: 0 0 0 2px rgba(225, 123, 80, 0.1);
+}
+
+.top-navigation .search-icon {
+  position: absolute;
+  margin-left: 1.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #e2ac6e;
+  pointer-events: none;
+}
+
+.top-navigation .nav-items {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  white-space: nowrap;
+  padding-right: 0.5rem;
+}
+
+.notification-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 6px 6px 6px 12px; /* Increased left padding */
+  border-radius: 15px;
+  transition: background-color 0.2s ease;
+  border: 0;
+  background-color: transparent;
+  font-size: 13px;
+  font-weight: 1000;
+  cursor: pointer;
+  gap: 8px; /* Increased gap between items */
+}
+
+.notification-wrapper svg {
+  color: #a85c3c; /* This matches your search icon color */
+  transition: color 0.2s ease;
+}
+
+.notification-wrapper:hover svg {
+  color: #e17b50; /* Changes to orange on hover, matching your theme */
+}
+
+.notification-wrapper:hover {
+  background-color: #fef8f0;
+}
+
+.top-navigation .notification-count {
+  background-color: #e17b50;
+  color: white;
+  font-family: "Helvetica";
+  font-size: 16px;
+  font-weight: 1000;
+  padding: 2px 8px;
+  border-radius: 10px;
+  min-width: 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px; /* Added margin for extra spacing */
+}
+
+.top-navigation .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Increased gap */
+  padding: 6px; /* Added padding */
+  border-radius: 24px; /* Rounded corners */
+  background-color: #fef8f0; /* Light background */
+  transition: background-color 0.2s ease;
+}
+
+.top-navigation .user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.top-navigation .user-profile span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.top-navigation .suggestions-list {
+  position: absolute;
+  top: calc(100% + 8px); /* Increased spacing from input */
+  left: 1.5rem;
+  width: 50%;
+  background: white;
+  border-radius: 12px; /* Slightly increased radius */
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  padding: 6px; /* Added padding for inner items */
+  border: 1px solid rgba(0, 0, 0, 0.08); /* Subtle border */
+}
+
+.top-navigation .suggestion-item {
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  font-weight: 500;
+  color: #384458;
+  border-radius: 8px; /* Rounded corners for items */
+  margin: 2px 0; /* Spacing between items */
+}
+
+.top-navigation .suggestion-item:hover,
+.top-navigation .suggestion-item.active {
+  background-color: #fdf5f1; /* Lighter, more subtle hover state */
+  color: #e17b50;
+}
+
+/* Add smooth entrance animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.top-navigation .suggestions-list {
+  animation: slideIn 0.2s ease-out;
+}
+
+.top-navigation .suggestions-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.top-navigation .suggestions-list::-webkit-scrollbar-track {
+  background: #f3ede7;
+}
+
+.top-navigation .suggestions-list::-webkit-scrollbar-thumb {
+  background: #2d3748;
+  border-radius: 3px;
+}
+
+.top-navigation .suggestions-list::-webkit-scrollbar-thumb:hover {
+  background: #e17b50;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.top-navigation .suggestions-list {
+  animation: slideDown 0.2s ease-out;
+}
+
+@media (max-width: 768px) {
+  .top-navigation {
+    left: 0;
+  }
+
+  body.dashboard-sidebar-expanded .top-navigation {
+    left: 0;
+  }
+}
