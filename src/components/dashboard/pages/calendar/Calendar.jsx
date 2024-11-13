@@ -42,7 +42,7 @@ const Calendar = () => {
       end: new Date(2024, 10, 1, 10, 30),
       location: "1200 California St, San Francisco",
       type: "primary",
-      attendees: ["JM", "KL", "RT"],
+      attendees: ["JM", "KL"],
     },
     {
       id: 2,
@@ -264,11 +264,11 @@ const Calendar = () => {
       days.push(
         <div
           key={`prev-${i}`}
-          className='calendar-day other-month'
+          className="calendar-day other-month"
           onClick={() => handleDayClick(year, month, day)}
         >
-          <div className='day-number'>{day}</div>
-          <div className='events-container'></div>
+          <div className="day-number">{day}</div>
+          <div className="events-container"></div>
         </div>
       );
     }
@@ -299,8 +299,8 @@ const Calendar = () => {
             )
           }
         >
-          <div className='day-number'>{day}</div>
-          <div className='events-container'>
+          <div className="day-number">{day}</div>
+          <div className="events-container">
             {dayEvents.map((event, index) => (
               <div
                 key={event.id}
@@ -310,15 +310,15 @@ const Calendar = () => {
                 )}\n${event.title}`}
                 onClick={(e) => handleEventClick(event, e)}
               >
-                <div className='event-time'>
+                <div className="event-time">
                   {formatEventTime(event.start)} - {formatEventTime(event.end)}
                 </div>
-                <div className='event-title'>{event.title}</div>
+                <div className="event-title">{event.title}</div>
               </div>
             ))}
             {dayEvents.length > 3 && (
               <div
-                className='more-events'
+                className="more-events"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleDayClick(
@@ -345,11 +345,11 @@ const Calendar = () => {
       days.push(
         <div
           key={`next-${i}`}
-          className='calendar-day other-month'
+          className="calendar-day other-month"
           onClick={() => handleDayClick(year, month, i)}
         >
-          <div className='day-number'>{i}</div>
-          <div className='events-container'></div>
+          <div className="day-number">{i}</div>
+          <div className="events-container"></div>
         </div>
       );
     }
@@ -358,30 +358,30 @@ const Calendar = () => {
   };
 
   return (
-    <div className='calendar-layout'>
+    <div className="calendar-layout">
       <Sidebar />
       <TopNavigation />
       <Chat />
 
-      <main className='calendar-main'>
-        <div className='calendar-content'>
-          <div className='calendar-header'>
-            <div className='header-center'>
-              <div className='calendar-type'>
-                <button className='nav-button' onClick={handlePrevMonth}>
-                  <ChevronLeft className='nav-icon' />
+      <main className="calendar-main">
+        <div className="calendar-content">
+          <div className="calendar-header">
+            <div className="header-center">
+              <div className="calendar-type">
+                <button className="nav-button" onClick={handlePrevMonth}>
+                  <ChevronLeft className="nav-icon" />
                 </button>
-                <span className='current-month'>
+                <span className="current-month">
                   {formatMonth(currentDate)}, {currentDate.getFullYear()}
                 </span>
-                <button className='nav-button' onClick={handleNextMonth}>
-                  <ChevronRight className='nav-icon' />
+                <button className="nav-button" onClick={handleNextMonth}>
+                  <ChevronRight className="nav-icon" />
                 </button>
               </div>
             </div>
-            <div className='header-left'>
-              <div className='view-options-container'>
-                <div className='view-options-wrapper'>
+            <div className="header-left">
+              <div className="view-options-container">
+                <div className="view-options-wrapper">
                   {["Day", "Week", "Month"].map((view) => (
                     <button
                       key={view}
@@ -396,11 +396,11 @@ const Calendar = () => {
                 </div>
               </div>
             </div>
-            <div className='header-right'>
-              <button className='today-button' onClick={handleTodayClick}>
+            <div className="header-right">
+              <button className="today-button" onClick={handleTodayClick}>
                 Today ({getTodayDate()})
               </button>
-              <button className='new-schedule-button'>+ New Schedule</button>
+              <button className="new-schedule-button">+ New Schedule</button>
             </div>
           </div>
 
@@ -421,7 +421,7 @@ const Calendar = () => {
             />
           ) : (
             <>
-              <div className='calendar-days'>
+              <div className="calendar-days">
                 {[
                   "Monday",
                   "Tuesday",
@@ -431,12 +431,12 @@ const Calendar = () => {
                   "Saturday",
                   "Sunday",
                 ].map((day) => (
-                  <span key={day} className='day-label'>
+                  <span key={day} className="day-label">
                     {day}
                   </span>
                 ))}
               </div>
-              <div className='calendar-grid'>{renderCalendarDays()}</div>
+              <div className="calendar-grid">{renderCalendarDays()}</div>
             </>
           )}
         </div>
