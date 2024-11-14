@@ -17,7 +17,7 @@ const FeaturesSection = () => {
           </video>
         </div>
         <div className="feature-content">
-          <h2 className="feature-title">Upload A Documnet</h2>
+          <h2 className="feature-title">Upload A Document</h2>
           <p className="feature-description">
             Upload any document - from leases and contracts to invoices and
             receipts - and let our AI instantly extract and organize all the

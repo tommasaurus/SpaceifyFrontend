@@ -29,7 +29,7 @@ export const Navbar = () => {
         scrollAmount = window.innerHeight * 0.8;
         break;
       case "pricing":
-        scrollAmount = window.innerHeight * 3.5;
+        scrollAmount = window.innerHeight * 4.4;
         break;
       default:
         return;
