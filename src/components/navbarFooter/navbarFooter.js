@@ -29,7 +29,7 @@ export const Navbar = () => {
         scrollAmount = window.innerHeight * 0.8;
         break;
       case "pricing":
-        scrollAmount = window.innerHeight * 1.8;
+        scrollAmount = window.innerHeight * 3.5;
         break;
       default:
         return;
@@ -42,43 +42,43 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className='navbar'>
-      <div className='navbar-container'>
-        <Link to='/' className='navbar-logo'>
-          <img src={logo} alt='Dwellex Logo' />
+    <nav className="navbar">
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">
+          <img src={logo} alt="Dwellex Logo" />
         </Link>
         {isCollapsed ? (
-          <div className='mobile-menu'>
-            <Link to='/login' className='login-button'>
+          <div className="mobile-menu">
+            <Link to="/login" className="login-button">
               Login
             </Link>
-            <button className='dropdown-toggle' onClick={toggleDropdown}>
-              <span className='hamburger-icon'>☰</span>
+            <button className="dropdown-toggle" onClick={toggleDropdown}>
+              <span className="hamburger-icon">☰</span>
             </button>
             {isDropdownOpen && (
-              <ul className='nav-menu dropdown'>
-                <li className='nav-item'>
+              <ul className="nav-menu dropdown">
+                <li className="nav-item">
                   <a
-                    href='#features'
-                    className='nav-link'
+                    href="#features"
+                    className="nav-link"
                     onClick={(e) => handleNavClick(e, "features")}
                   >
                     Features
                   </a>
                 </li>
-                <li className='nav-item'>
+                <li className="nav-item">
                   <a
-                    href='#pricing'
-                    className='nav-link'
+                    href="#pricing"
+                    className="nav-link"
                     onClick={(e) => handleNavClick(e, "pricing")}
                   >
                     Pricing
                   </a>
                 </li>
-                <li className='nav-item'>
+                <li className="nav-item">
                   <a
-                    href='#contact'
-                    className='nav-link'
+                    href="#contact"
+                    className="nav-link"
                     onClick={(e) => handleNavClick(e, "contact")}
                   >
                     Contact
@@ -88,36 +88,36 @@ export const Navbar = () => {
             )}
           </div>
         ) : (
-          <ul className='nav-menu'>
-            <li className='nav-item'>
+          <ul className="nav-menu">
+            <li className="nav-item">
               <a
-                href='#features'
-                className='nav-link'
+                href="#features"
+                className="nav-link"
                 onClick={(e) => handleNavClick(e, "features")}
               >
                 Features
               </a>
             </li>
-            <li className='nav-item'>
+            <li className="nav-item">
               <a
-                href='#pricing'
-                className='nav-link'
+                href="#pricing"
+                className="nav-link"
                 onClick={(e) => handleNavClick(e, "pricing")}
               >
                 Pricing
               </a>
             </li>
-            <li className='nav-item'>
+            <li className="nav-item">
               <a
-                href='#contact'
-                className='nav-link'
+                href="#contact"
+                className="nav-link"
                 onClick={(e) => handleNavClick(e, "contact")}
               >
                 Contact
               </a>
             </li>
-            <li className='nav-item'>
-              <Link to='/login' className='login-button'>
+            <li className="nav-item">
+              <Link to="/login" className="login-button">
                 Login
               </Link>
             </li>
@@ -130,73 +130,73 @@ export const Navbar = () => {
 
 export const Footer = () => {
   return (
-    <footer className='navbar-footer'>
-      <div className='footer-container'>
-        <div className='footer-logo'>
-          <Link to='/'>
-            <img src={logo} alt='Company Logo' />
+    <footer className="navbar-footer">
+      <div className="footer-container">
+        <div className="footer-logo">
+          <Link to="/">
+            <img src={logo} alt="Company Logo" />
           </Link>
         </div>
-        <div className='footer-links'>
-          <div className='footer-section'>
+        <div className="footer-links">
+          <div className="footer-section">
             <h4>Product</h4>
             <ul>
               <li>
-                <Link to='/features'>Features</Link>
+                <Link to="/features">Features</Link>
               </li>
               <li>
-                <Link to='/pricing'>Pricing</Link>
+                <Link to="/pricing">Pricing</Link>
               </li>
               <li>
-                <Link to='/demo'>Demo</Link>
+                <Link to="/demo">Demo</Link>
               </li>
             </ul>
           </div>
-          <div className='footer-section'>
+          <div className="footer-section">
             <h4>Company</h4>
             <ul>
               <li>
-                <Link to='/about'>About Us</Link>
+                <Link to="/about">About Us</Link>
               </li>
               <li>
-                <Link to='/careers'>Careers</Link>
+                <Link to="/careers">Careers</Link>
               </li>
               <li>
-                <Link to='/contact'>Contact</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
-          <div className='footer-section'>
+          <div className="footer-section">
             <h4>Resources</h4>
             <ul>
               <li>
-                <Link to='/blog'>Blog</Link>
+                <Link to="/blog">Blog</Link>
               </li>
               <li>
-                <Link to='/help'>Help Center</Link>
+                <Link to="/help">Help Center</Link>
               </li>
               <li>
-                <Link to='/api'>API Documentation</Link>
+                <Link to="/api">API Documentation</Link>
               </li>
             </ul>
           </div>
-          <div className='footer-section'>
+          <div className="footer-section">
             <h4>Legal</h4>
             <ul>
               <li>
-                <Link to='/privacy'>Privacy Policy</Link>
+                <Link to="/privacy">Privacy Policy</Link>
               </li>
               <li>
-                <Link to='/terms'>Terms of Service</Link>
+                <Link to="/terms">Terms of Service</Link>
               </li>
               <li>
-                <Link to='/cookies'>Cookie Policy</Link>
+                <Link to="/cookies">Cookie Policy</Link>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className='footer-bottom'>
+      <div className="footer-bottom">
         <p>&copy; 2024 Spaceify. All rights reserved.</p>
       </div>
     </footer>

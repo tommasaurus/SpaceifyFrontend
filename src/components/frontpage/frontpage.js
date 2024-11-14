@@ -10,11 +10,12 @@ const Frontpage = () => {
   const navigate = useNavigate();
 
   const handleTryForFree = () => {
-    navigate("/signup");
+    // navigate("/signup");
+    navigate("/login");
   };
 
   const handleLearnMore = () => {
-    navigate("/about");
+    // navigate("/about");
   };
 
   return (
