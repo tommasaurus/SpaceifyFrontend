@@ -81,7 +81,7 @@ const ClientSignup = () => {
         </button>
 
         <div className="divider">
-          <span>or sign up with email</span>
+          <span>or sign up with username</span>
         </div>
 
         <form onSubmit={handleSignup} className="signup-form">
