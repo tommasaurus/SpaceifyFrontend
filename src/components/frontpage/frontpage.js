@@ -41,15 +41,20 @@ const Frontpage = () => {
             </h1>
             <h2 className='subtitle'>Simplify Operations & Maximize Profit</h2>
             <div className='button-container'>
-              <button
-                className='tff-button hollow'
-                onClick={handleTalkToFounders}
-              >
-                Talk to founders
-              </button>
-              <button className='tff-button' onClick={handleTryForFree}>
-                Try for free
-              </button>
+              <div className='buttons-row'>
+                <button
+                  className='tff-button hollow'
+                  onClick={handleTalkToFounders}
+                >
+                  Talk to founders
+                </button>
+                <button className='tff-button' onClick={handleTryForFree}>
+                  Try for free
+                </button>
+              </div>
+              <span className='button-subtext'>
+                Claim $29/mo deal, free during beta.
+              </span>
             </div>
           </div>
         </div>

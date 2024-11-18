@@ -1,6 +1,11 @@
+/* ==========================================================================
+   1. Imports
+   ========================================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap");
 
-/* Global styles */
+/* ==========================================================================
+   2. Global Styles
+   ========================================================================== */
 body {
   background-color: #f1efe7;
   margin: 0;
@@ -10,7 +15,9 @@ body {
   flex-direction: column;
 }
 
-/* Base Layout Styles */
+/* ==========================================================================
+   3. Layout & Containers
+   ========================================================================== */
 .page-container {
   width: 100%;
   max-width: 1440px;
@@ -22,7 +29,9 @@ body {
   font-family: "Outfit", sans-serif;
 }
 
-/* Hero Section */
+/* ==========================================================================
+   4. Hero Section
+   ========================================================================== */
 .hero-container {
   display: flex;
   justify-content: space-between;
@@ -44,7 +53,9 @@ body {
   padding-left: 3rem;
 }
 
-/* Typography */
+/* ==========================================================================
+   5. Typography
+   ========================================================================== */
 h1.animated-title {
   font-size: 4rem;
   margin-bottom: 1rem;
@@ -73,16 +84,27 @@ h2.subtitle {
   animation-delay: 1.2s;
 }
 
-/* Buttons */
+/* ==========================================================================
+   6. Buttons
+   ========================================================================== */
 .button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
   margin-bottom: 1rem;
+}
+
+/* Add a new wrapper for the buttons */
+.buttons-row {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
+/* Update button styles */
 .tff-button {
-  padding: 0.9rem 0rem;
+  padding: 0.9rem 0;
   font-size: 1rem;
   color: #ffffff;
   border: none;
@@ -90,68 +112,83 @@ h2.subtitle {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: bold;
-  margin-bottom: 0.5rem;
   min-width: 200px;
   background-color: #000000;
+  margin: 0; /* Remove margin-bottom */
 }
 
-.tff-button.hollow {
-  padding: 0.8rem 0rem;
+/* Style for the claim text */
+.button-subtext {
   font-size: 1rem;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
+  color: #2f2f2f;
+  margin-top: 0.25rem;
+}
+
+/* Maintain existing hollow button style */
+.tff-button.hollow {
   background-color: transparent;
   border: 2px solid #000000;
   color: #000000;
 }
 
-/* Animations */
-@keyframes fadeInWord {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.tff-button:not(.hollow) {
+  position: relative;
+  background: #000000;
+  padding: 0.9rem 0rem;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.tff-button:not(.hollow)::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    #ff7e47 0%,
+    #e17b50 25%,
+    #a855f7 50%,
+    #e17b50 75%,
+    #ff7e47 100%
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 15s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ==========================================================================
+   7. Dashboard Preview
+   ========================================================================== */
+.dashboard-preview-container {
+  flex: 1;
+  max-width: 52%;
+  margin-top: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.dashboard-image {
+  width: 100%;
+  border-radius: 20px;
+  border: 2px solid #5a1f00;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Capabilities Section */
+.dashboard-image:hover {
+  transform: translateY(-5px);
+}
+
+/* ==========================================================================
+   8. Capabilities Section
+   ========================================================================== */
 .capabilities-section {
   max-width: 1200px;
   margin: 6rem auto;
@@ -203,56 +240,9 @@ h2.subtitle {
   margin: 0;
 }
 
-/* Dashboard Preview */
-.dashboard-preview-container {
-  flex: 1;
-  max-width: 52%;
-  margin-top: 1rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 0.5s;
-}
-
-.dashboard-image {
-  width: 100%;
-  border-radius: 20px;
-  border: 2px solid #5a1f00;
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.dashboard-image:hover {
-  transform: translateY(-5px);
-}
-
-/* Secondary Hero Section */
-.secondary-hero {
-  margin: 0rem 0 4rem 0;
-  background-color: transparent;
-}
-
-.secondary-hero .hero-content {
-  padding-left: 2rem;
-}
-
-.secondary-hero .feature-title {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-  background: #e17b50;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-.secondary-hero .feature-subtitle {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: #333;
-}
-
+/* ==========================================================================
+   9. Pricing Section
+   ========================================================================== */
 .pricing-container {
   max-width: 1200px;
   margin: 6rem auto;
@@ -390,29 +380,66 @@ h2.subtitle {
   opacity: 0.9;
 }
 
-@media (max-width: 1024px) {
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+/* ==========================================================================
+   10. Animations
+   ========================================================================== */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 150%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-@media (max-width: 768px) {
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+@keyframes fadeInWord {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-
-  .pricing-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .pricing-title-main {
-    font-size: 2rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Responsive Styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   11. Media Queries
+   ========================================================================== */
 @media (max-width: 1200px) {
   .capabilities-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -437,6 +464,13 @@ h2.subtitle {
   .secondary-hero .hero-content {
     padding-left: 0;
     text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
@@ -465,5 +499,18 @@ h2.subtitle {
   .capabilities-title {
     font-size: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pricing-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .pricing-title-main {
+    font-size: 2rem;
   }
 }
