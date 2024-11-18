@@ -15,6 +15,7 @@ import Properties from "./components/dashboard/pages/properties/Properties";
 import Messages from "./components/dashboard/pages/messages/Messages";
 import Calendar from "./components/dashboard/pages/calendar/Calendar";
 import TenantPage from "./components/dashboard/pages/tenants/Tenant";
+import Vault from "./components/dashboard/pages/vault/Vault";
 import RequireAuth from "./components/RequireAuth";
 
 function LayoutWithNavbarFooter({ children }) {
@@ -50,6 +51,7 @@ function App() {
                     <Route path="messages" element={<Messages />} />
                     <Route path="calendar" element={<Calendar />} />
                     <Route path="tenants" element={<TenantPage />} />
+                    <Route path="vault" element={<Vault />} />
                   </Routes>
                 </RequireAuth>
               }
