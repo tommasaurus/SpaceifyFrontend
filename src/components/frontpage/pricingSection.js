@@ -1,6 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const PricingSection = () => {
+  const navigate = useNavigate();
+
+  const handleTryForFree = () => {
+    navigate("/login");
+  };
+
+  const handleTalkToFounders = () => {
+    window.open("https://cal.com/ronish-dua-wufnm8", "_blank");
+  };
+
   return (
     <div className='hero-container'>
       <div className='hero-content-centered'>
@@ -10,8 +21,12 @@ const PricingSection = () => {
           Maximize Profit.
         </p>
         <div className='hero-buttons'>
-          <button className='tff-button hollow'>Talk to founders</button>
-          <button className='tff-button'>Try it for free</button>
+          <button className='tff-button hollow' onClick={handleTalkToFounders}>
+            Talk to founders
+          </button>
+          <button className='tff-button' onClick={handleTryForFree}>
+            Try it for free
+          </button>
         </div>
       </div>
     </div>
