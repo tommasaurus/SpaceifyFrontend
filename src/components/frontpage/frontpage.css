@@ -166,7 +166,7 @@ h2.subtitle {
    ========================================================================== */
 .dashboard-preview-container {
   flex: 1;
-  max-width: 52%;
+  max-width: 53%;
   margin-top: 1rem;
   opacity: 0;
   transform: translateY(20px);
@@ -191,7 +191,8 @@ h2.subtitle {
    ========================================================================== */
 .capabilities-section {
   max-width: 1200px;
-  margin: 6rem auto;
+  margin: 3rem auto;
+  margin-top: -1rem;
   padding: 0 2rem;
 }
 
@@ -241,143 +242,107 @@ h2.subtitle {
 }
 
 /* ==========================================================================
-   9. Pricing Section
+   9. Hero Section (replacing Pricing Section)
    ========================================================================== */
-.pricing-container {
-  max-width: 1200px;
-  margin: 6rem auto;
-  padding: 0 2rem;
-}
-
-.pricing-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.pricing-title-main {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 1rem;
-}
-
-.pricing-subtitle-main {
-  font-size: 1.2rem;
-  color: #666;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.pricing-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e5e7eb;
+.hero-container {
+  width: 100%;
+  min-height: 600px;
+  background-color: transparent;
   display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  margin-top: -5rem;
+  margin-bottom: -3rem;
 }
 
-.pricing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+.hero-content-centered {
+  max-width: 1000px;
+  text-align: center;
+  color: #ffffff;
 }
 
-.pricing-card.popular {
-  border: 2px solid #e17b50;
-}
-
-.popular-badge {
-  position: absolute;
-  top: 1rem;
-  right: -2rem;
-  background: #e17b50;
-  color: white;
-  padding: 0.25rem 3rem;
-  transform: rotate(45deg);
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.pricing-title {
-  font-size: 1.5rem;
+.hero-title {
+  color: #e17b50;
+  font-size: 4.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #000;
-}
-
-.pricing-price {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #000;
-}
-
-.pricing-duration {
-  color: #666;
   margin-bottom: 1.5rem;
-  font-size: 1rem;
+  line-height: 1.2;
 }
 
-.pricing-description {
-  color: #666;
-  margin-bottom: 2rem;
-  font-size: 1rem;
+.hero-description {
+  font-size: 1.25rem;
+  color: #6d6e70;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.6;
 }
 
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2rem 0;
-  flex-grow: 1;
-}
-
-.feature-list li {
+.hero-buttons {
   display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  color: #333;
+  gap: 1rem;
+  justify-content: center;
 }
 
-.feature-list li:before {
-  content: "✓";
-  color: #e17b50;
-  margin-right: 0.75rem;
-  font-weight: bold;
-}
-
-.pricing-button {
-  padding: 0.9rem 2rem;
-  font-size: 1.1rem;
-  color: #ffffff;
-  background-color: #000000;
-  border: none;
-  border-radius: 15px;
+.hero-button {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
+  transition: all 0.3s ease;
 }
 
-.pricing-button.hollow {
+.hero-button.hollow {
   background-color: transparent;
-  border: 2px solid #000000;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.hero-button.hollow:hover {
+  background-color: #ffffff;
   color: #000000;
 }
 
-.pricing-button:hover {
-  opacity: 0.9;
+.hero-button.solid {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  color: #000000;
+}
+
+.hero-button.solid:hover {
+  background-color: #f3f4f6;
+}
+
+/* Update media queries */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-container {
+    padding: 2rem 1rem;
+  }
 }
 
 /* ==========================================================================

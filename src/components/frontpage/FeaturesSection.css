@@ -6,6 +6,38 @@
   padding: 0 2rem;
 }
 
+/* New title section styles */
+.hero-top-section-cap {
+  margin-top: -5rem;
+  margin-bottom: 6rem;
+}
+
+.hero-top-section-cap .animated-title {
+  font-size: 6rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-top-section-cap .animated-title .word {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInWord 0.5s ease forwards;
+  background: #e17b50;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* New static subtitle class without animation */
+.subtitle-static {
+  font-size: 1.11rem;
+  max-width: 900px;
+  margin-bottom: 2rem;
+  color: #333;
+  padding-left: 4px;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
 .featuressection-feature-row {
   display: flex;
   align-items: center;
@@ -62,8 +94,48 @@
   margin: 0 auto;
 }
 
+/* Animations */
+@keyframes fadeInWord {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
+  .hero-top-section-cap .animated-title {
+    font-size: 4rem;
+  }
+
+  .subtitle-static {
+    font-size: 1.2rem;
+  }
+
   .featuressection-feature-row {
     flex-direction: column;
     gap: 2rem;
@@ -76,5 +148,41 @@
   .featuressection-feature-video-container,
   .featuressection-feature-content {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-top-section-cap .animated-title {
+    font-size: 3rem;
+  }
+
+  .hero-top-section-cap {
+    margin-top: -3rem;
+  }
+
+  .featuressection-features-section {
+    padding: 0 1rem;
+  }
+
+  .featuressection-feature-title {
+    font-size: 2rem;
+  }
+
+  .featuressection-feature-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-top-section-cap .animated-title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle-static {
+    font-size: 1.1rem;
+  }
+
+  .featuressection-feature-row {
+    margin-bottom: 4rem;
   }
 }
