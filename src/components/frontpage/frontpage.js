@@ -14,22 +14,22 @@ const Frontpage = () => {
     navigate("/login");
   };
 
-  const handleLearnMore = () => {
-    // navigate("/about");
+  const handleTalkToFounders = () => {
+    window.open("https://cal.com/ronish-dua-wufnm8", "_blank");
   };
 
   return (
-    <div className="page-container">
-      <div className="hero-container">
-        <div className="hero-content">
-          <div className="hero-top-section">
-            <h1 className="animated-title">
+    <div className='page-container'>
+      <div className='hero-container'>
+        <div className='hero-content'>
+          <div className='hero-top-section'>
+            <h1 className='animated-title'>
               {"AI-Powered platform for your entire portfolio"
                 .split(" ")
                 .map((word, index) => (
                   <React.Fragment key={index}>
                     <span
-                      className="word"
+                      className='word'
                       style={{
                         animationDelay: `${0.1 + index * 0.17}s`,
                       }}
@@ -39,30 +39,33 @@ const Frontpage = () => {
                   </React.Fragment>
                 ))}
             </h1>
-            <h2 className="subtitle">Simplify Operations & Maximize Profit</h2>
-            <div className="button-container">
-              <button className="tff-button" onClick={handleTryForFree}>
-                Try for free
+            <h2 className='subtitle'>Simplify Operations & Maximize Profit</h2>
+            <div className='button-container'>
+              <button
+                className='tff-button hollow'
+                onClick={handleTalkToFounders}
+              >
+                Talk to founders
               </button>
-              <button className="tff-button hollow" onClick={handleLearnMore}>
-                Learn More
+              <button className='tff-button' onClick={handleTryForFree}>
+                Try for free
               </button>
             </div>
           </div>
         </div>
 
-        <div className="dashboard-preview">
-          <img
-            src={frontpage}
-            alt="Spaceify Dashboard Interface"
-            className="dashboard-image"
-          />
+        <div className='dashboard-preview-container'>
+          <div className='dashboard-wrapper'>
+            <img
+              src={frontpage}
+              alt='Spaceify Dashboard Interface'
+              className='dashboard-image'
+            />
+          </div>
         </div>
       </div>
       <FeaturesSection />
-
       <CapabilitiesSection />
-
       <PricingSection />
     </div>
   );

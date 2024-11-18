@@ -48,6 +48,7 @@ body {
 h1.animated-title {
   font-size: 4rem;
   margin-bottom: 1rem;
+  margin-top: 0rem;
   font-weight: bold;
   line-height: 1.2;
 }
@@ -74,18 +75,18 @@ h2.subtitle {
 
 /* Buttons */
 .button-container {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
 .tff-button {
-  padding: 0.9rem 2rem;
-  font-size: 1.1rem;
+  padding: 0.9rem 0rem;
+  font-size: 1rem;
   color: #ffffff;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: bold;
@@ -95,6 +96,13 @@ h2.subtitle {
 }
 
 .tff-button.hollow {
+  padding: 0.8rem 0rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
   background-color: transparent;
   border: 2px solid #000000;
   color: #000000;
@@ -196,10 +204,10 @@ h2.subtitle {
 }
 
 /* Dashboard Preview */
-.dashboard-preview {
+.dashboard-preview-container {
   flex: 1;
-  max-width: 54%;
-  margin-top: 4rem;
+  max-width: 52%;
+  margin-top: 1rem;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards;
