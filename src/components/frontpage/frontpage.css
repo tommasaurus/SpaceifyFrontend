@@ -49,8 +49,8 @@ body {
 }
 
 .hero-top-section {
-  margin-bottom: 4rem;
-  padding-left: 3rem;
+  margin-bottom: -4rem;
+  padding-left: 1rem;
 }
 
 /* ==========================================================================
@@ -166,8 +166,9 @@ h2.subtitle {
    ========================================================================== */
 .dashboard-preview-container {
   flex: 1;
-  max-width: 53%;
-  margin-top: 1rem;
+  max-width: 57%;
+  margin-left: -5rem;
+  margin-top: 4rem;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards;
