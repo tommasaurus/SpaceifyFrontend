@@ -9,7 +9,7 @@
 }
 
 .navbar-container {
-  max-width: 1425px; /* Same as FrontPage*/
+  max-width: 1425px;
   margin: 0 20px;
   display: flex;
   justify-content: space-between;
