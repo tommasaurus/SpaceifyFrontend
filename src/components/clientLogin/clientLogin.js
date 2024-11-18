@@ -61,7 +61,7 @@ const ClientLogin = () => {
       setTimeout(() => {
         const token = localStorage.getItem("access_token");
         if (token) {
-          window.location.href = "https://dashboard.spaceify.ai";
+          navigate("/dashboard", { replace: true });
         } else {
           setError("Authentication failed");
         }

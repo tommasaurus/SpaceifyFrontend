@@ -60,7 +60,7 @@ const ClientSignup = () => {
 
     try {
       await signupUser(name, email, password);
-      window.location.href = "https://dashboard.spaceify.ai";
+      navigate("/dashboard");
     } catch (error) {
       const errorDetail = error.response?.data?.detail;
       setError(errorDetail || error.message || "Signup failed");
