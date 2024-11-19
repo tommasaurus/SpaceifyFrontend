@@ -122,10 +122,21 @@ const ClientSignup = () => {
           {error && <div className="signup-error-message">{error}</div>}
 
           <div className="signup-input-group">
-            <label className="signup-label">EMAIL</label>
+            <label className="label">NAME</label>
             <input
               type="text"
-              placeholder="Enter your email"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="signup-input-group">
+            <label className="signup-label">USERNAME</label>
+            <input
+              type="text"
+              placeholder="Enter your username"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
