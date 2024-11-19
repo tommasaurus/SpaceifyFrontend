@@ -9,7 +9,7 @@
 }
 
 .navbar-container {
-  max-width: 1425px;
+  max-width: 1425px; /* ronish's changes */
   margin: 0 20px;
   display: flex;
   justify-content: space-between;
