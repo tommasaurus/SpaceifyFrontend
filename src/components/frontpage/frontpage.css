@@ -44,13 +44,12 @@ body {
 .hero-content {
   flex: 0.5;
   max-width: 100%;
-  padding-right: 2rem;
   margin-top: 2rem;
 }
 
 .hero-top-section {
   margin-bottom: -4rem;
-  padding-left: 1rem;
+  padding-left: 0rem;
 }
 
 /* ==========================================================================
@@ -166,25 +165,43 @@ h2.subtitle {
    ========================================================================== */
 .dashboard-preview-container {
   flex: 1;
-  max-width: 57%;
+  max-width: 60%;
   margin-left: -5rem;
-  margin-top: 4rem;
+  margin-top: 5rem;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(40px);
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.5s;
+  perspective: 1000px;
+}
+
+.dashboard-wrapper {
+  transform: rotateX(10deg) rotateY(-17deg);
+  transform-style: preserve-3d;
 }
 
 .dashboard-image {
   width: 100%;
   border-radius: 20px;
-  border: 2px solid #5a1f00;
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  filter: drop-shadow(0 30px 40px rgba(206, 107, 54, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #000;
 }
 
 .dashboard-image:hover {
   transform: translateY(-5px);
+}
+
+@media (max-width: 1200px) {
+  .dashboard-wrapper {
+    transform: none;
+  }
+
+  .dashboard-preview-container {
+    margin-left: 0;
+    max-width: 100%;
+  }
 }
 
 /* ==========================================================================
