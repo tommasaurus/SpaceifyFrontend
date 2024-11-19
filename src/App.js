@@ -21,7 +21,8 @@ import RequireAuth from "./components/RequireAuth";
 function LayoutWithNavbarFooter({ children }) {
   const location = useLocation();
   // Check if current path is Frontpage or ClientSignup
-  const showNavbarFooter = location.pathname === "/";
+  const showNavbarFooter =
+    location.pathname === "/" || location.pathname.includes("/#");
 
   return (
     <>
