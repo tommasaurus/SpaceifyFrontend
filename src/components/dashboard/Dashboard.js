@@ -53,26 +53,8 @@ const Dashboard = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleAddProperty = async () => {
-    // Store the action in sessionStorage
-    sessionStorage.setItem("pendingAction", "addProperty");
-    // Navigate to properties page
-    navigate("/dashboard/properties");
-  };
-
-  const handleUploadDocument = async () => {
-    // Store the action in sessionStorage
-    sessionStorage.setItem("pendingAction", "uploadDocument");
-    // Navigate to properties page
-    navigate("/dashboard/properties");
-  };
-
   if (loading) {
     return <div>Loading...</div>;
-  }
-
-  if (properties.length === 0) {
-    return <EmptyDashboard />;
   }
 
   return (
@@ -87,27 +69,17 @@ const Dashboard = () => {
           <div className='art-nouveau-corner bottom-left'></div>
           <div className='art-nouveau-corner bottom-right'></div>
           <div className='header-container'>
-            <div className='header-left'>
-              <Greeting />
-            </div>
-            <div className='header-actions'>
-              <button
-                className='nouveau-button primary'
-                onClick={handleAddProperty}
-              >
-                <PlusCircle className='button-icon' />
-                Add Property
-              </button>
-              <button
-                className='nouveau-button secondary'
-                onClick={handleUploadDocument}
-              >
-                <Upload className='button-icon' />
-                Upload Document
-              </button>
-            </div>
+            <div className='header-left'></div>
+            <div className='header-actions'></div>
           </div>
-          <DashboardMetrics properties={properties} />
+          <div className='dashboard-content-wrapper'>
+            <DashboardMetrics properties={properties} />
+            {properties.length === 0 && (
+              <div className='empty-dashboard-overlay'>
+                <EmptyDashboard />
+              </div>
+            )}
+          </div>
         </div>
       </main>
     </div>
