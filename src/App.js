@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import {
   BrowserRouter as Router,
@@ -20,9 +21,11 @@ import RequireAuth from "./components/RequireAuth";
 
 function LayoutWithNavbarFooter({ children }) {
   const location = useLocation();
-  // Check if current path is Frontpage or ClientSignup
+  // Updated condition to handle both root and hash routes
   const showNavbarFooter =
-    location.pathname === "/" || location.pathname.includes("/#");
+    location.pathname === "/" ||
+    location.pathname === "" ||
+    location.hash.includes("#");
 
   return (
     <>
@@ -34,6 +37,16 @@ function LayoutWithNavbarFooter({ children }) {
 }
 
 function App() {
+  useEffect(() => {
+    // Force HTTPS on Vercel deployment
+    if (
+      window.location.protocol === "http:" &&
+      window.location.hostname !== "localhost"
+    ) {
+      window.location.protocol = "https:";
+    }
+  }, []);
+
   return (
     <Router>
       <div className="App">
