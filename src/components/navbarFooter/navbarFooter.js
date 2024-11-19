@@ -22,34 +22,26 @@ export const Navbar = () => {
 
   const handleNavClick = (e, section) => {
     e.preventDefault();
-    // Get the current URL's pathname
-    const currentPath = window.location.pathname;
+    let scrollAmount;
 
-    // Only proceed if we're on the home page
-    if (currentPath === "/") {
-      let scrollAmount;
-      switch (section) {
-        case "features":
-          scrollAmount = window.innerHeight * 0.8;
-          break;
-        case "pricing":
-          scrollAmount = window.innerHeight * 4.4;
-          break;
-        case "contact":
-          scrollAmount = window.innerHeight * 5.4;
-          break;
-        default:
-          return;
-      }
-
-      window.scrollTo({
-        top: scrollAmount,
-        behavior: "smooth",
-      });
-    } else {
-      // If not on home page, navigate to home page with hash
-      window.location.href = `/#${section}`;
+    switch (section) {
+      case "features":
+        scrollAmount = window.innerHeight * 0.8;
+        break;
+      case "pricing":
+        scrollAmount = window.innerHeight * 4.4;
+        break;
+      case "contact":
+        scrollAmount = window.innerHeight * 5.4; // Adjust this value as needed
+        break;
+      default:
+        return;
     }
+
+    window.scrollTo({
+      top: scrollAmount,
+      behavior: "smooth",
+    });
   };
 
   return (
