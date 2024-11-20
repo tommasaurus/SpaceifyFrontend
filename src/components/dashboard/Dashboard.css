@@ -1,10 +1,4 @@
-/* Update in Dashboard.css */
-.dashboard-content-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
+/* Base Layout */
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
@@ -17,7 +11,7 @@
   margin-top: 70px;
   margin-left: 73px;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0rem 2rem;
+  padding: 0 2rem;
   width: calc(100% - 73px);
   box-sizing: border-box;
 }
@@ -27,6 +21,47 @@ body.dashboard-sidebar-expanded .dashboard-main {
   width: calc(100% - 230px);
 }
 
+.dashboard-content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Map Container */
+.dashboard-map-container {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height: 450px;
+  margin: 0.5rem auto; /* Changed to auto for horizontal centering */
+  max-width: calc(100% - 2rem); /* Account for padding */
+  width: 100%;
+}
+
+.dashboard-map-container .map-page {
+  height: 100%;
+}
+
+.dashboard-map-container .map-container {
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.dashboard-map-container .map-page,
+.dashboard-map-container .map-container,
+.dashboard-map-container .map-container > div {
+  height: 100% !important;
+  width: 100% !important; /* Added to ensure map container respects parent width */
+}
+
+/* Hide Map Headers */
+.dashboard-map-container .header-container,
+.dashboard-map-container .header-actions,
+.dashboard-map-container .map-page > .header-container {
+  display: none;
+}
+
+/* Empty Dashboard */
 .empty-dashboard-overlay {
   position: fixed;
   top: 0;
@@ -40,9 +75,9 @@ body.dashboard-sidebar-expanded .dashboard-main {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* Update in emptyDashboard.css */
 .empty-dashboard-layout {
   position: relative;
   width: 100%;
@@ -62,12 +97,7 @@ body.dashboard-sidebar-expanded .dashboard-main {
   text-align: center;
 }
 
-.content-container {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
+/* Welcome Section */
 .welcome-message h1 {
   color: #1e293b;
   font-size: 2.5rem;
@@ -88,6 +118,7 @@ body.dashboard-sidebar-expanded .dashboard-main {
   margin-bottom: 1.5rem;
 }
 
+/* Feature Cards */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -131,6 +162,7 @@ body.dashboard-sidebar-expanded .dashboard-main {
   line-height: 1.5;
 }
 
+/* Buttons */
 .add-property-button {
   background: #e17b50;
   color: white;
@@ -151,11 +183,14 @@ body.dashboard-sidebar-expanded .dashboard-main {
   transform: translateY(-2px);
 }
 
-/* Animation */
-.empty-dashboard-overlay {
-  animation: fadeIn 0.3s ease-out;
+/* Utilities */
+.content-container {
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -165,8 +200,18 @@ body.dashboard-sidebar-expanded .dashboard-main {
   }
 }
 
-/* Responsive adjustments */
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-map-container {
+    height: 400px;
+  }
+}
+
 @media (max-width: 768px) {
+  .dashboard-map-container {
+    height: 350px;
+  }
+
   .features-grid {
     grid-template-columns: 1fr;
   }

@@ -10,6 +10,7 @@ import api from "../../services/api";
 import logo from "../../assets/img/logo.png";
 import Greeting from "./greeting/Greeting";
 import Chat from "./chatBot/Chat";
+import Map from "./Map/Map";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -58,25 +59,29 @@ const Dashboard = () => {
   }
 
   return (
-    <div className='dashboard-layout'>
+    <div className="dashboard-layout">
       <Sidebar logo={logo} />
       <TopNavigation />
       <Chat />
-      <main className='dashboard-main'>
-        <div className='art-nouveau-border'>
-          <div className='art-nouveau-corner top-left'></div>
-          <div className='art-nouveau-corner top-right'></div>
-          <div className='art-nouveau-corner bottom-left'></div>
-          <div className='art-nouveau-corner bottom-right'></div>
-          <div className='header-container'>
-            <div className='header-left'></div>
-            <div className='header-actions'></div>
+      <main className="dashboard-main">
+        <div className="art-nouveau-border">
+          <div className="art-nouveau-corner top-left"></div>
+          <div className="art-nouveau-corner top-right"></div>
+          <div className="art-nouveau-corner bottom-left"></div>
+          <div className="art-nouveau-corner bottom-right"></div>
+          <div className="header-container">
+            <div className="header-left"></div>
+            <div className="header-actions"></div>
           </div>
-          <div className='dashboard-content-wrapper'>
+          <div className="dashboard-content-wrapper">
             <DashboardMetrics properties={properties} />
-            {properties.length === 0 && (
-              <div className='empty-dashboard-overlay'>
+            {properties.length === 0 ? (
+              <div className="empty-dashboard-overlay">
                 <EmptyDashboard />
+              </div>
+            ) : (
+              <div className="dashboard-map-container">
+                <Map />
               </div>
             )}
           </div>
