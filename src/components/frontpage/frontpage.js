@@ -10,8 +10,8 @@ const Frontpage = () => {
   const navigate = useNavigate();
 
   const handleTryForFree = () => {
-    // navigate("/signup");
-    navigate("/login");
+    navigate("/signup");
+    // navigate("/login");
   };
 
   const handleTalkToFounders = () => {
@@ -19,17 +19,17 @@ const Frontpage = () => {
   };
 
   return (
-    <div className='page-container'>
-      <div className='hero-container'>
-        <div className='hero-content'>
-          <div className='hero-top-section'>
-            <h1 className='animated-title'>
+    <div className="page-container">
+      <div className="hero-container">
+        <div className="hero-content">
+          <div className="hero-top-section">
+            <h1 className="animated-title">
               {"AI-Powered platform for your entire portfolio"
                 .split(" ")
                 .map((word, index) => (
                   <React.Fragment key={index}>
                     <span
-                      className='word'
+                      className="word"
                       style={{
                         animationDelay: `${0.1 + index * 0.17}s`,
                       }}
@@ -39,45 +39,45 @@ const Frontpage = () => {
                   </React.Fragment>
                 ))}
             </h1>
-            <h2 className='subtitle'>Simplify Operations & Maximize Profit</h2>
-            <div className='button-container'>
-              <div className='buttons-row'>
+            <h2 className="subtitle">Simplify Operations & Maximize Profit</h2>
+            <div className="button-container">
+              <div className="buttons-row">
                 <button
-                  className='tff-button hollow'
+                  className="tff-button hollow"
                   onClick={handleTalkToFounders}
                 >
                   Talk to founders
                 </button>
-                <button className='tff-button' onClick={handleTryForFree}>
+                <button className="tff-button" onClick={handleTryForFree}>
                   Try for free
                 </button>
               </div>
-              <span className='button-subtext'>
+              <span className="button-subtext">
                 Claim $29/mo deal, free during beta.
               </span>
             </div>
           </div>
         </div>
 
-        <div className='dashboard-preview-container'>
-          <div className='dashboard-wrapper'>
+        <div className="dashboard-preview-container">
+          <div className="dashboard-wrapper">
             <img
               src={frontpage}
-              alt='Spaceify Dashboard Interface'
-              className='dashboard-image'
+              alt="Spaceify Dashboard Interface"
+              className="dashboard-image"
             />
           </div>
         </div>
       </div>
-      <div id='features'>
+      <div id="features">
         <FeaturesSection />
       </div>
 
-      <div id='capabilities'>
+      <div id="capabilities">
         <CapabilitiesSection />
       </div>
 
-      <div id='pricing'>
+      <div id="pricing">
         <PricingSection />
       </div>
     </div>
