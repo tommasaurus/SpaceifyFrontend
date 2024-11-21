@@ -22,12 +22,9 @@ export const Navbar = () => {
 
   const handleNavClick = (e, section) => {
     e.preventDefault();
-    console.log("Clicking section:", section);
-    console.log("Window location:", window.location.href);
 
     // First try to find the element by ID
     const element = document.getElementById(section);
-    console.log("Found element:", element);
 
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });

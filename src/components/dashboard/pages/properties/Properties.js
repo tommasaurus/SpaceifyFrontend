@@ -38,7 +38,6 @@ const Properties = () => {
 
     try {
       const response = await api.delete(`/properties/${propertyId}`);
-      console.log("Delete response:", response);
 
       // Update local state
       setProperties(properties.filter((p) => p.id !== propertyId));

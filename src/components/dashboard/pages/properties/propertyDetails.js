@@ -68,7 +68,6 @@ const PropertyDetails = ({
 
     try {
       setIsDeleting(true);
-      console.log("Attempting to delete property:", property.id);
       await onDelete(property.id);
       setShowDeleteModal(false); // Close the modal on success
       onClose(); // Close the property details

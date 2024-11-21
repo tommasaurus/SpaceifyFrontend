@@ -6,7 +6,6 @@ export async function loginUser(email, password) {
   try {
     console.log("Making login request...");
     const response = await api.post("/auth/login", { email, password });
-    // console.log("Login response received:", response.data);
 
     if (!response.data.access_token) {
       throw new Error("No access token received");
